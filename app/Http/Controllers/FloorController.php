@@ -13,8 +13,9 @@ class FloorController extends Controller
             'error'=> false,
             'floors'=>$floors
         ],200);
-
     }
 
+    public function show(){
 
+    }
 }
