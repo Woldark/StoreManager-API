@@ -29,8 +29,32 @@ class GoodController extends Controller
     public function store(Request $request)
     {
         $name = $request->get('name');
+        $type_id = $request->get('type_id');
+        $room_id = $request->get('room_id');
+        $property_number = $request->get('property_number');
+        $kind = $request->get('kind');
+        $old_property_number = $request->get('old_property_number');
+        $old_kind = $request->get('old_kind');
+        $description = $request->get('description');
+        $model = $request->get('model');
+        $serial = $request->get('serial');
+        $barcode = $request->get('barcode');
+        $status = $request->get('status');
+        $unit = $request->get('unit');
         $good = new Good();
         $good->name = $name;
+        $good->type_id = $type_id;
+        $good->room_id = $room_id;
+        $good->property_number = $property_number;
+        $good->kind = $kind;
+        $good->old_property_number = $old_property_number;
+        $good->old_kind = $old_kind;
+        $good->description = $description;
+        $good->model = $model;
+        $good->serial = $serial;
+        $good->barcode = $barcode;
+        $good->status = $status;
+        $good->unit = $unit;
         $good->save();
 
         if ($good)
