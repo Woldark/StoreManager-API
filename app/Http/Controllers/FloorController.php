@@ -29,8 +29,11 @@ class FloorController extends Controller
     public function store(Request $request)
     {
         $name = $request->get('name');
+        $building_id = $request->get('building_id');
+
         $floor = new Floor();
         $floor->name = $name;
+        $floor->building_id = $building_id;
         $floor->save();
 
         if ($floor)
