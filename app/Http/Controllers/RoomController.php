@@ -29,8 +29,13 @@ class RoomController extends Controller
     public function store(Request $request)
     {
         $name = $request->get('name');
+        $floor_id = $request->get('floor_id');
+        $barcode = $request->get('barcode');
+
         $room = new Room();
         $room->name = $name;
+        $room->floor_id = $floor_id;
+        $room->barcode = $barcode;
         $room->save();
 
         if ($room)
