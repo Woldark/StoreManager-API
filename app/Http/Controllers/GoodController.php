@@ -41,6 +41,7 @@ class GoodController extends Controller
         $barcode = $request->get('barcode');
         $status = $request->get('status');
         $unit = $request->get('unit');
+
         $good = new Good();
         $good->name = $name;
         $good->type_id = $type_id;
