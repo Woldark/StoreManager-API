@@ -32,8 +32,21 @@ class ResponsibleController extends Controller
     public function store(Request $request)
     {
         $name = $request->get('name');
+        $room_id = $request->get('room_id');
+        $code_meli = $request->get('code_meli');
+        $post = $request->get('post');
+        $shenasnameh = $request->get('shenasnameh');
+        $personeli = $request->get('personeli');
+
+
         $responsible = new Responsible();
         $responsible->name = $name;
+        $responsible->room_id = $room_id;
+        $responsible->code_meli = $code_meli;
+        $responsible->post = $post;
+        $responsible->shenasnameh = $shenasnameh;
+        $responsible->personeli = $personeli;
+
         $responsible->save();
 
         if ($responsible)
