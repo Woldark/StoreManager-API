@@ -11,7 +11,7 @@ class ResponsibleController extends Controller
 
     public function index()
     {
-        $responsibles = Room::all();
+        $responsibles = Responsible::all();
         return response()->json([
             'error' => false,
             'responsibles' => $responsibles
