@@ -14,7 +14,7 @@ class ResponsibleController extends Controller
         $responsibles = Room::all();
         return response()->json([
             'error' => false,
-            'rooms' => $responsibles
+            'responsibles' => $responsibles
         ], 200);
     }
 
