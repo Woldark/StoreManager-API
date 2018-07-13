@@ -19,9 +19,13 @@ class ResponsibleController extends Controller
 	public function show($responsible)
 	{
 		$responsible = Responsible::find($responsible);
+		$room = $responsible->room;
+		$goods = $room->goods;
 		return response()->json([
 			'error' => false,
-			'responsible' => $responsible
+			'responsible' => $responsible,
+			'room' => $room,
+			'products' => $goods
 		], 200);
 	}
 
