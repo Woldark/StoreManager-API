@@ -4,10 +4,20 @@ namespace App\Http\Controllers;
 
 use App\Responsible;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class ResponsibleController extends Controller
 {
-	public function index()
+
+    private $responsible_path;
+
+    public function __construct()
+    {
+        $this-> responsible_path = public_path('/images/responsible');
+        $this->makeDirectories();
+    }
+
+    public function index()
 	{
 		$responsibles = Responsible::all();
 		return response()->json([
@@ -47,6 +57,16 @@ class ResponsibleController extends Controller
 		$responsible->personeli = $personeli;
 		$responsible->save();
 
+		if (Input::hasFile('image')){
+
+		    $image = $request->file('image');
+		    $input['imagename'] = 'R_'. $responsible->id. '.' .$image->getClientOriginalExtension();
+		    $image ->move($this ->responsible_path,$input['imagename']);
+		    $responsible->picture =$input['imagename'];
+		    $responsible->save();
+
+        }
+
 		if ($responsible)
 			return response()->json([
 				'error' => false
@@ -76,4 +96,11 @@ class ResponsibleController extends Controller
 			'error' => false
 		], 200);
 	}
+
+	private function makeDirectories (){
+
+        if(!is_dir($this->responsible_path))
+            mkdir($this->responsible_path,0777,true);
+        chmod($this->responsible_path,0777);
+    }
 }
