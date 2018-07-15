@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ config('app.name') }} | Admin</title>
-    <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.4 -->
     <link rel="stylesheet" href="{{ asset('/admin/bootstrap/css/bootstrap.min.css') }}">
-    <!-- icons -->
     <link rel="stylesheet" href="{{ asset('/admin/dist/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/admin/dist/css/ionicons.min.css') }}">
-    <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('/admin/dist/css/AdminLTE.css') }}">
     <link rel="stylesheet" href="{{ asset('/admin/dist/css/iransans.css') }}">
     <link rel="stylesheet" href="{{ asset('/admin/dist/css/skins/skin-green.min.css') }}">
@@ -24,36 +20,23 @@
 </head>
 <body class="skin-green sidebar-mini">
 <div class="wrapper">
-
-    <!-- Main Header -->
     <header class="main-header">
-
-        <!-- Logo -->
         <a href="index2.html" class="logo">
             <span class="logo-lg">Malayer <b>University</b></span>
         </a>
-
-        <!-- Header Navbar -->
         <nav class="navbar navbar-static-top" role="navigation">
-            <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
-                    <!-- User Account Menu -->
                     <li class="dropdown user user-menu">
-                        <!-- Menu Toggle Button -->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <!-- The user image in the navbar-->
                             <img src="{{ asset('/admin/dist/img/user.jpg') }}" class="user-image">
-                            <!-- hidden-xs hides the username on small devices so only the image appears. -->
                             <span class="hidden-xs">{{ $authUser->name }}</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <!-- The user image in the menu -->
                             <li class="user-header">
                                 <img src="{{ asset('/admin/dist/img/user.jpg') }}" class="img-circle">
                                 <p>مدیر سایت</p>
                             </li>
-                            <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
                                     <a href="#" class="btn btn-default btn-flat">پروفایل</a>
@@ -73,33 +56,22 @@
             </div>
         </nav>
     </header>
-    <!-- Left side column. contains the logo and sidebar -->
     <aside class="main-sidebar">
-
-        <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
-
-            <!-- Sidebar user panel (optional) -->
             <div class="user-panel">
                 <div class="pull-right image">
                     <img src="{{ asset('/admin/dist/img/user.jpg') }}" class="img-circle">
                 </div>
                 <div class="pull-left info">
                     <p>{{ $authUser->name }}</p>
-                    <!-- Status -->
                     <a href="#"><i class="fa fa-circle text-success"></i>
                         مدیر سایت
                     </a>
                 </div>
             </div>
-            <!-- Sidebar Menu -->
-        @yield('sidebar')
-        <!-- /.sidebar-menu -->
+            @yield('sidebar')
         </section>
-        <!-- /.sidebar -->
     </aside>
-
-    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         @if (Session::has('message'))
             <div id="message" class="ok">
@@ -110,26 +82,19 @@
             <div id="message" class="error">
                 {{ Session::get('error') }}
             </div>
-    @endif
-    <!-- Content Header (Page header) -->
-    @yield('header')
-    <!-- Main content -->
+        @endif
+        @yield('header')
         <section class="content">
             <br>
             @yield('content')
-        </section><!-- /.content -->
-    </div><!-- /.content-wrapper -->
-
-    <!-- Main Footer -->
+        </section>
+    </div>
     <footer class="main-footer" style="text-align: center; font-size: smaller">
         Designed & Developed By <a href="http://arash-hatami.ir" target="_blank">Arash Hatami</a>
     </footer>
-</div><!-- ./wrapper -->
-<!-- jQuery 2.1.4 -->
+</div>
 <script src="{{ asset('/admin/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
-<!-- Bootstrap 3.3.4 -->
 <script src="{{ asset('/admin/bootstrap/js/bootstrap.min.js') }}"></script>
-<!-- AdminLTE App -->
 <script src="{{ asset('/admin/dist/js/app.min.js') }}"></script>
 <script src="{{ asset('/admin/dist/js/polyfill.min.js') }}"></script>
 <script type='application/javascript' src="{{ asset('/admin/dist/js/fast_click.js') }}"></script>

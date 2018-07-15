@@ -13,7 +13,6 @@
 @section('content')
     <div class="row">
         <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
             <div class="small-box bg-aqua">
                 <div class="inner">
                     <h3>۱۵۰</h3>
@@ -24,9 +23,8 @@
                 </div>
                 <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
             </div>
-        </div><!-- ./col -->
+        </div>
         <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
             <div class="small-box bg-green">
                 <div class="inner">
                     <h3>۵۳</h3>
@@ -37,9 +35,8 @@
                 </div>
                 <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
             </div>
-        </div><!-- ./col -->
+        </div>
         <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
             <div class="small-box bg-yellow">
                 <div class="inner">
                     <h3>۴۴</h3>
@@ -50,9 +47,8 @@
                 </div>
                 <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
             </div>
-        </div><!-- ./col -->
+        </div>
         <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
             <div class="small-box bg-red">
                 <div class="inner">
                     <h3>۶۵</h3>
@@ -63,9 +59,8 @@
                 </div>
                 <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
             </div>
-        </div><!-- ./col -->
+        </div>
         <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
             <div class="small-box bg-maroon">
                 <div class="inner">
                     <h3>۶۵</h3>
@@ -76,9 +71,8 @@
                 </div>
                 <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
             </div>
-        </div><!-- ./col -->
+        </div>
         <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
             <div class="small-box bg-purple">
                 <div class="inner">
                     <h3>۶۵</h3>
@@ -89,9 +83,8 @@
                 </div>
                 <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
             </div>
-        </div><!-- ./col -->
+        </div>
         <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
             <div class="small-box bg-olive">
                 <div class="inner">
                     <h3>۶۵</h3>
@@ -102,6 +95,6 @@
                 </div>
                 <a href="#" class="small-box-footer">اطلاعات بیشتر <i class="fa fa-arrow-circle-left"></i></a>
             </div>
-        </div><!-- ./col -->
-    </div><!-- /.row -->
+        </div>
+    </div>
 @endsection
