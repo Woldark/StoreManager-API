@@ -1,77 +1,72 @@
-@extends('layouts.app')
+@extends('auth.layouts.base')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+    <div class="col-lg-offset-3 col-lg-6">
+        <div class="form-box">
+            <div class="form-top">
+                <div class="form-top-left">
+                    <h3>ثبت نام</h3>
+                    <p>مشخصات خود را جهت ثبت نام وارد نمایید :</p>
                 </div>
+                <div class="form-top-right">
+                    <i class="fa fa-pencil"></i>
+                </div>
+            </div>
+            <div class="form-bottom">
+                <form role="form" action="{{ route('register') }}" method="POST" class="registration-form">
+                    {{ csrf_field() }}
+                    <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
+                        <input type="text" name="name" placeholder="نام و نام خانوادگی"
+                               class="form-control" id="name" value="{{ old('name') }}">
+                        @if ($errors->has('name'))
+                            <span class="help-block error-block">
+                                            <strong>{{ $errors->first('name') }}</strong>
+                                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                        <input type="email" name="email" placeholder="آدرس ایمیل"
+                               class="form-control" id="email" value="{{ old('email') }}">
+                        @if ($errors->has('email'))
+                            <span class="help-block error-block">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                        <input type="password" name="password" placeholder="رمز عبور"
+                               class="form-control" id="password" value="{{ old('password') }}">
+                        @if ($errors->has('password'))
+                            <span class="help-block error-block">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password_confirmation" placeholder="تکرار رمز عبور"
+                               required
+                               class="form-control" id="password_confirmation">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="token" placeholder="کلید مدیریت"
+                               required
+                               class="form-control" id="token">
+                        @if ($errors->has('token'))
+                            <span class="help-block error-block">
+                                            <strong>{{ $errors->first('token') }}</strong>
+                                        </span>
+                        @endif
+                    </div>
+                    @if ($errors->has('g-recaptcha-response'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                        </span>
+                    @endif
+                    {!! NoCaptcha::renderJs('fa') !!}
+                    {!! NoCaptcha::display() !!}
+                    <button type="submit" class="btn">ثبت نام</button>
+                </form>
             </div>
         </div>
     </div>
-</div>
 @endsection
