@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Controller;
 use App\Responsible;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
@@ -9,15 +10,15 @@ use Illuminate\Support\Facades\Input;
 class ResponsibleController extends Controller
 {
 
-    private $responsible_path;
+	private $responsible_path;
 
-    public function __construct()
-    {
-        $this-> responsible_path = public_path('/images/responsible');
-        $this->makeDirectories();
-    }
+	public function __construct()
+	{
+		$this->responsible_path = public_path('/images/responsible');
+		$this->makeDirectories();
+	}
 
-    public function index()
+	public function index()
 	{
 		$responsibles = Responsible::all();
 		return response()->json([
@@ -57,15 +58,15 @@ class ResponsibleController extends Controller
 		$responsible->personeli = $personeli;
 		$responsible->save();
 
-		if (Input::hasFile('image')){
+		if (Input::hasFile('image')) {
 
-		    $image = $request->file('image');
-		    $input['imagename'] = 'R_'. $responsible->id. '.' .$image->getClientOriginalExtension();
-		    $image ->move($this ->responsible_path,$input['imagename']);
-		    $responsible->picture =$input['imagename'];
-		    $responsible->save();
+			$image = $request->file('image');
+			$input['imagename'] = 'R_' . $responsible->id . '.' . $image->getClientOriginalExtension();
+			$image->move($this->responsible_path, $input['imagename']);
+			$responsible->picture = $input['imagename'];
+			$responsible->save();
 
-        }
+		}
 
 		if ($responsible)
 			return response()->json([
@@ -97,10 +98,11 @@ class ResponsibleController extends Controller
 		], 200);
 	}
 
-	private function makeDirectories (){
+	private function makeDirectories()
+	{
 
-        if(!is_dir($this->responsible_path))
-            mkdir($this->responsible_path,0777,true);
-        chmod($this->responsible_path,0777);
-    }
+		if (!is_dir($this->responsible_path))
+			mkdir($this->responsible_path, 0777, true);
+		chmod($this->responsible_path, 0777);
+	}
 }

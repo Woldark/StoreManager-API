@@ -1,10 +1,10 @@
 <?php
 
 Route::resources([
-    'buildings' => 'BuildingController',
-    'rooms' => 'RoomController',
-    'floors' => 'FloorController',
-    'types' => 'TypeController',
-    'goods' => 'GoodController',
-    'responsibles' => 'ResponsibleController',
+    'buildings' => 'API\BuildingController',
+    'rooms' => 'API\RoomController',
+    'floors' => 'API\FloorController',
+    'types' => 'API\TypeController',
+    'goods' => 'API\GoodController',
+    'responsibles' => 'API\ResponsibleController',
 ]);
