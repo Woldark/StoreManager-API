@@ -1,0 +1,93 @@
+/*
+ * Copyright (c) 2018. Arash Hatami
+ */
+
+#message {
+  border-radius: 2px;
+  bottom: 60px;
+  color: #fff;
+  left: 10%;
+  margin-left: -125px;
+  min-width: 250px;
+  padding: 16px;
+  position: fixed;
+  text-align: center;
+  visibility: hidden;
+  z-index: 1;
+}
+
+#message.show {
+  animation: fadein 0.5s, fadeout 0.5s 3s;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 3s;
+  visibility: visible;
+}
+
+#message.ok {
+  background-color: green;
+}
+
+#message.error {
+  background-color: red;
+}
+
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 60px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 60px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 60px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    bottom: 60px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+
+.hrm {
+  border: 0;
+  border-top: 1px solid rgba(138, 164, 175, 0.5);
+  display: block;
+  height: 1px;
+  margin: 5px 12px 5px 8px;
+  padding: 0;
+}
+
+.box-body {
+  margin-bottom: 20px;
+}
+
+.img-input-title {
+  direction: rtl;
+  margin-left: 10px !important;
+}

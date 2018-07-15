@@ -1,0 +1,11 @@
+/*
+ * Copyright (c) 2018. Arash Hatami
+ */
+
+
+
+div.FixedHeader_Cloned th,
+div.FixedHeader_Cloned td {
+	background-color: white !important;
+}
+

@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) 2018. Arash Hatami
+ */
+
+.page-heading {
+  margin: 10px 15px;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700;
+}
+
+#my-dropzone .message {
+  color: #008347;
+  font-size: 1.2em;
+}
+
+.dropzone {
+  background: white;
+  border: 2px dashed #008347;
+  border-radius: 5px;
+  min-height: 250px;
+  padding: 50px;
+  vertical-align: baseline;
+  margin: 10px 15px;
+}

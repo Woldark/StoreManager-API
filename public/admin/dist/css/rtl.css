@@ -1,0 +1,8 @@
+/*
+ * Copyright (c) 2018. Arash Hatami
+ */
+
+.sidebar-menu li a .fa-angle-left,
+.sidebar-menu li .label, .sidebar-menu li .badge {
+	margin-top: -15px !important;
+}
