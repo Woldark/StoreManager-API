@@ -27,7 +27,7 @@ class CreateGoodsTable extends Migration
 			$table->string('model');
 			$table->string('serial');
 			$table->string('barcode');
-			$table->string('status');
+			$table->enum('status', ['healthy', 'broken']);
 			$table->string('picture')->nullable();
 			$table->string('unit');
 			$table->foreign('type_id')->references('id')->on('types');
