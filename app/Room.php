@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Room
@@ -28,17 +30,17 @@ class Room extends Model
 {
 	protected $hidden = ['goods'];
 
-	public function floor()
+	public function floor(): BelongsTo
 	{
 		return $this->belongsTo(Floor::class, 'floor_id');
 	}
 
-	public function responsibles()
+	public function responsibles(): HasMany
 	{
 		return $this->hasMany(Responsible::class, 'room_id');
 	}
 
-	public function goods()
+	public function goods(): HasMany
 	{
 		return $this->hasMany(Good::class, 'room_id');
 	}

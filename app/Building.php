@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Building
@@ -28,7 +29,7 @@ class Building extends Model
 		'floors'
 	];
 
-	public function floors()
+	public function floors(): HasMany
 	{
 		return $this->hasMany(Floor::class, 'building_id');
 	}

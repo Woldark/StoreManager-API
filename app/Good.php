@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * App\Good
@@ -47,12 +48,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Good extends Model
 {
-	public function room()
+	public function room(): BelongsTo
 	{
 		return $this->belongsTo(Room::class, 'room_id');
 	}
 
-	public function type()
+	public function type(): BelongsTo
 	{
 		return $this->belongsTo(Type::class, 'type_id');
 	}

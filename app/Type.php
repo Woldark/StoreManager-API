@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Type
@@ -20,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Type extends Model
 {
-	public function goods()
+	public function goods(): HasMany
 	{
 		return $this->hasMany(Good::class, 'type_id');
 	}

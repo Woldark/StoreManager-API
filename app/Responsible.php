@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * App\Responsible
@@ -34,7 +35,7 @@ class Responsible extends Model
 {
 	protected $hidden = ['room'];
 
-	public function room()
+	public function room(): BelongsTo
 	{
 		return $this->belongsTo(Room::class, 'room_id');
 	}
