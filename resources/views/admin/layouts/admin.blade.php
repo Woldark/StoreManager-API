@@ -26,6 +26,62 @@
         </li>
 
         <li class="treeview">
+            <a href="#"><i class="fa fa-building"></i> <span>ساختمان ها</span>
+                <i class="fa fa-angle-left pull-left"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="#"><i class="fa fa-circle-o"></i> لیست ساختمان ها</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-circle-o"></i> ساختمان جدید</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="#"><i class="fa fa-flag"></i> <span>طبقه ها</span>
+                <i class="fa fa-angle-left pull-left"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="#"><i class="fa fa-circle-o"></i> لیست طبقه ها</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-circle-o"></i> طبقه جدید</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="#"><i class="fa fa-user"></i> <span>اتاق ها</span>
+                <i class="fa fa-angle-left pull-left"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="#"><i class="fa fa-circle-o"></i> لیست اتاق ها</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-circle-o"></i> اتاق جدید</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview">
+            <a href="#"><i class="fa fa-user"></i> <span>کالا ها</span>
+                <i class="fa fa-angle-left pull-left"></i>
+            </a>
+            <ul class="treeview-menu">
+                <li>
+                    <a href="#"><i class="fa fa-circle-o"></i> لیست کالا ها</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-circle-o"></i> کالای جدید</a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="treeview">
             <a href="#"><i class="fa fa-user"></i> <span>مسئولین</span>
                 <i class="fa fa-angle-left pull-left"></i>
             </a>
