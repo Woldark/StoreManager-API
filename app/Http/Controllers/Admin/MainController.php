@@ -9,17 +9,38 @@
 namespace App\Http\Controllers\Admin;
 
 
+use App\Building;
+use App\Floor;
+use App\Good;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
+use App\Responsible;
+use App\Room;
 
 class MainController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
 	public function index()
 	{
-		if (!Auth::check()) {
-			$message = "ابتدا وارد حساب کاربری شوید";
-			return redirect('login')->with("message", $message);
-		}
-		return view('admin.home');
+		$productCount = Good::all()->count();
+		$responsibleCount = Responsible::all()->count();
+		$roomCount = Room::all()->count();
+		$buildingCount = Building::all()->count();
+		$floorCount = Floor::all()->count();
+		$healthyProducts = Good::whereStatus("healthy")->count();
+		$brokenProducts = Good::whereStatus("broken")->count();
+
+		return view('admin.home', compact(
+			'productCount',
+			'responsibleCount',
+			'roomCount',
+			'buildingCount',
+			'floorCount',
+			'healthyProducts',
+			'brokenProducts'
+		));
 	}
 }
