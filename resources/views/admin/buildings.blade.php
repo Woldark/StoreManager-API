@@ -38,12 +38,10 @@
                             <li>
                                 <span class="text" style="margin-right: 10px">{{ $building->name }}</span>
                                 <div class="tools">
-                                    <a href="{{ route('admin::buildings.edit', $building->id) }}"
-                                       target="_blank" class="link">
+                                    <a href="{{ route('admin::buildings.edit', $building->id) }}" class="link">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a href="{{ route('admin::buildings.delete', $building->id) }}"
-                                       target="_blank" class="link">
+                                    <a href="{{ route('admin::buildings.delete', $building->id) }}" class="link">
                                         <i class="fa fa-trash-o"></i>
                                     </a>
                                 </div>
