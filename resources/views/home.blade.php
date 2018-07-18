@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Malayer University</title>
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300" rel="stylesheet" type="text/css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <style>
         html, body {
             background-color: #fff;
@@ -44,6 +45,8 @@
 <div class="flex-center position-ref full-height">
     <div class="content">
         <div class="title"><span style="font-weight: 300">Malayer University</span> Inventory System</div>
+        <br>
+        <a class="btn btn-lg btn-light" href="{{ route('login') }}">Login</a>
     </div>
 </div>
 </body>
