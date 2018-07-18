@@ -163,6 +163,7 @@ return [
 		// mine
 		Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+		RealRashid\SweetAlert\SweetAlertServiceProvider::class,
 	],
 
 	/*
@@ -212,7 +213,7 @@ return [
 		'Validator' => Illuminate\Support\Facades\Validator::class,
 		'View' => Illuminate\Support\Facades\View::class,
 		'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
-
+		'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
 	],
 
 ];
