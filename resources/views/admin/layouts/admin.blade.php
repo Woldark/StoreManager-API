@@ -11,7 +11,7 @@
         <li class="treeview
         @if (Route::is('admin::types.index')) active @endif
         @if (Route::is('admin::types.create')) active @endif
-            ">
+                ">
             <a href="#"><i class="fa fa-book"></i> <span>دسته بندی ها</span>
                 <i class="fa fa-angle-left pull-left"></i>
             </a>
@@ -31,10 +31,10 @@
             </a>
             <ul class="treeview-menu">
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> لیست ساختمان ها</a>
+                    <a href="{{ route('admin::buildings.index') }}"><i class="fa fa-circle-o"></i> لیست ساختمان ها</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> ساختمان جدید</a>
+                    <a href="{{ route('admin::buildings.create') }}"><i class="fa fa-circle-o"></i> ساختمان جدید</a>
                 </li>
             </ul>
         </li>
@@ -45,10 +45,10 @@
             </a>
             <ul class="treeview-menu">
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> لیست طبقه ها</a>
+                    <a href="{{ route('admin::floors.index') }}"><i class="fa fa-circle-o"></i> لیست طبقه ها</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> طبقه جدید</a>
+                    <a href="{{ route('admin::floors.create') }}"><i class="fa fa-circle-o"></i> طبقه جدید</a>
                 </li>
             </ul>
         </li>
@@ -59,10 +59,10 @@
             </a>
             <ul class="treeview-menu">
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> لیست اتاق ها</a>
+                    <a href="{{ route('admin::rooms.index') }}"><i class="fa fa-circle-o"></i> لیست اتاق ها</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> اتاق جدید</a>
+                    <a href="{{ route('admin::rooms.create') }}"><i class="fa fa-circle-o"></i> اتاق جدید</a>
                 </li>
             </ul>
         </li>
@@ -73,10 +73,10 @@
             </a>
             <ul class="treeview-menu">
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> لیست کالا ها</a>
+                    <a href="{{ route('admin::goods.index') }}"><i class="fa fa-circle-o"></i> لیست کالا ها</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> کالای جدید</a>
+                    <a href="{{ route('admin::goods.create') }}"><i class="fa fa-circle-o"></i> کالای جدید</a>
                 </li>
             </ul>
         </li>
@@ -87,10 +87,10 @@
             </a>
             <ul class="treeview-menu">
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> لیست مسئولین</a>
+                    <a href="{{ route('admin::responsibles.index') }}"><i class="fa fa-circle-o"></i> لیست مسئولین</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-circle-o"></i> مسئول جدید</a>
+                    <a href="{{ route('admin::responsibles.create') }}"><i class="fa fa-circle-o"></i> مسئول جدید</a>
                 </li>
             </ul>
         </li>
