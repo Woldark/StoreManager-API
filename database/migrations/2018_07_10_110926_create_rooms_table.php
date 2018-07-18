@@ -15,11 +15,14 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
-            $table->integer('floor_id')->unsigned()->index()->nullable();
-            $table->string('name');
-            $table->string('barcode')->unique();
-            $table->foreign('floor_id')->references('id')->on('floors');
+	        $table->integer('floor_id')->unsigned()->index()->nullable();
+
+	        $table->string('name');
+	        $table->string('barcode')->unique();
+
+	        $table->timestamps();
+
+	        $table->foreign('floor_id')->references('id')->on('floors')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

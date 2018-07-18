@@ -15,9 +15,9 @@ class CreateGoodsTable extends Migration
 	{
 		Schema::create('goods', function (Blueprint $table) {
 			$table->increments('id');
-			$table->timestamps();
 			$table->integer('type_id')->unsigned()->index()->nullable();
 			$table->integer('room_id')->unsigned()->index()->nullable();
+
 			$table->string('name');
 			$table->string('property_number')->unique();
 			$table->string('kind');
@@ -30,8 +30,11 @@ class CreateGoodsTable extends Migration
 			$table->enum('status', ['healthy', 'broken']);
 			$table->string('picture')->nullable();
 			$table->string('unit');
-			$table->foreign('type_id')->references('id')->on('types');
-			$table->foreign('room_id')->references('id')->on('rooms');
+
+			$table->timestamps();
+
+			$table->foreign('type_id')->references('id')->on('types')->onDelete('cascade')->onUpdate('cascade');
+			$table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade')->onUpdate('cascade');
 		});
 	}
 
