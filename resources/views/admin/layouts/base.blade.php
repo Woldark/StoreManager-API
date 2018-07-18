@@ -90,7 +90,8 @@
         </section>
     </div>
     <footer class="main-footer" style="text-align: center; font-size: smaller">
-        Designed & Developed By <a href="http://arash-hatami.ir" target="_blank">Arash Hatami</a>
+        Designed & Developed By <a href="http://arash-hatami.ir" target="_blank" style="color: #00a65a !important;">Arash
+            Hatami</a>
     </footer>
 </div>
 <script src="{{ asset('/admin/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
@@ -106,6 +107,8 @@
     }
 </script>
 <script src="{{ asset('admin/dist/js/mine.js') }}"></script>
+<script src="{{ asset('admin/dist/js/sweetalert2.all.js') }}"></script>
+@include('sweetalert::alert')
 @yield('script')
 </body>
 </html>
