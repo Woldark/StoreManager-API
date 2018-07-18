@@ -25,7 +25,10 @@
             </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview
+        @if (Route::is('admin::buildings.index')) active @endif
+        @if (Route::is('admin::buildings.create')) active @endif
+                ">
             <a href="#"><i class="fa fa-building"></i> <span>ساختمان ها</span>
                 <i class="fa fa-angle-left pull-left"></i>
             </a>
@@ -39,7 +42,10 @@
             </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview
+        @if (Route::is('admin::floors.index')) active @endif
+        @if (Route::is('admin::floors.create')) active @endif
+                ">
             <a href="#"><i class="fa fa-flag"></i> <span>طبقه ها</span>
                 <i class="fa fa-angle-left pull-left"></i>
             </a>
@@ -53,7 +59,10 @@
             </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview
+        @if (Route::is('admin::rooms.index')) active @endif
+        @if (Route::is('admin::rooms.create')) active @endif
+                ">
             <a href="#"><i class="fa fa-user"></i> <span>اتاق ها</span>
                 <i class="fa fa-angle-left pull-left"></i>
             </a>
@@ -67,7 +76,10 @@
             </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview
+        @if (Route::is('admin::goods.index')) active @endif
+        @if (Route::is('admin::goods.create')) active @endif
+                ">
             <a href="#"><i class="fa fa-user"></i> <span>کالا ها</span>
                 <i class="fa fa-angle-left pull-left"></i>
             </a>
@@ -81,7 +93,10 @@
             </ul>
         </li>
 
-        <li class="treeview">
+        <li class="treeview
+        @if (Route::is('admin::responsibles.index')) active @endif
+        @if (Route::is('admin::responsibles.create')) active @endif
+                ">
             <a href="#"><i class="fa fa-user"></i> <span>مسئولین</span>
                 <i class="fa fa-angle-left pull-left"></i>
             </a>
