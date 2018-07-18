@@ -42,6 +42,15 @@ class BuildingController extends Controller
 
 	public function delete($id)
 	{
+		try {
+			$building = Building::find($id);
+			$building->delete();
 
+			toast('ساختمان ' . $building->name . ' حذف شد', 'success', 'bottom-right');
+			return redirect()->route('admin::buildings.index');
+		} catch (\Exception $exception) {
+			toast('مشکلی پیش آمده است', 'error', 'bottom-right');
+			return redirect()->route('admin::buildings.index');
+		}
 	}
 }
