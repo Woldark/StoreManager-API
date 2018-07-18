@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 /**
  * App\Type
@@ -21,6 +22,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Type extends Model
 {
+	use LogsActivity;
+
+	protected static $logName = 'Type';
+
 	public function goods(): HasMany
 	{
 		return $this->hasMany(Good::class, 'type_id');

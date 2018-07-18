@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 /**
  * App\Building
@@ -21,6 +22,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Building extends Model
 {
+	use LogsActivity;
+
+	protected static $logName = 'Building';
+
 	protected $fillable = [
 		'name'
 	];

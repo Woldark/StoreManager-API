@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 /**
  * App\Room
@@ -28,6 +29,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Room extends Model
 {
+	use LogsActivity;
+
+	protected static $logName = 'Room';
+
 	protected $hidden = ['goods'];
 
 	public function floor(): BelongsTo

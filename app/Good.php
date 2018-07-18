@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 /**
  * App\Good
@@ -48,6 +49,10 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Good extends Model
 {
+	use LogsActivity;
+
+	protected static $logName = 'Good';
+
 	public function room(): BelongsTo
 	{
 		return $this->belongsTo(Room::class, 'room_id');
