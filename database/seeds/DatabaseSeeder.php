@@ -8,6 +8,8 @@ class DatabaseSeeder extends Seeder
 
 	public function run()
 	{
+		factory(\App\User::class, 1)->create();
+
 		factory(\App\Building::class, rand(1, 10))
 			->create()
 			->each(function (\App\Building $building) {
