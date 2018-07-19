@@ -36,7 +36,7 @@
                     <ul class="todo-list">
                         @foreach($floors as $floor)
                             <li>
-                                <span class="text" style="margin-right: 10px">{{ $floor->name }}</span>
+                                <span class="text" style="margin-right: 10px">{{ 'ساختمان ' . $floor->building->name . ' - طبقه ' . $floor->name }}</span>
                                 <div class="tools">
                                     <a href="{{ route('admin::floors.edit', $floor->id) }}" class="link">
                                         <i class="fa fa-edit"></i>

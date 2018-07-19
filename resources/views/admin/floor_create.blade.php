@@ -3,7 +3,7 @@
 @section('header')
     <section class="content-header">
         <h1>
-            طبقات
+            طبقه ها
             <br>
             <small>طبقه جدید</small>
         </h1>
@@ -21,12 +21,29 @@
                     <form method="post" action="{{ route('admin::floors.create') }}">
                         {{ csrf_field() }}
                         <div class="col-md-4 col-md-offset-4">
-                            <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('building') ? ' has-error' : '' }}">
+                                <label for="building" class="pull-right" style="direction: rtl;">ساختمان :</label>
+                                <select id="building" style="text-align: center; direction: rtl;"
+                                        class="form-control" tabindex="5"
+                                        name="building" required>
+                                    @foreach($buildings as $building)
+                                        <option value="{{ $building->id }}">{{ $building->name }}</option>
+                                    @endforeach
+                                </select>
+
+                                @if ($errors->has('building'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('building') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <input type="text" style="text-align: center"
                                        class="form-control" placeholder="نام"
                                        name="name" tabindex="1" required>
 
-                                @if ($errors->has('title'))
+                                @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
