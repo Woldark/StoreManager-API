@@ -21,12 +21,12 @@
                     <form method="post" action="{{ route('admin::buildings.create') }}">
                         {{ csrf_field() }}
                         <div class="col-md-4 col-md-offset-4">
-                            <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <input type="text" style="text-align: center"
                                        class="form-control" placeholder="نام"
                                        name="name" tabindex="1" required>
 
-                                @if ($errors->has('title'))
+                                @if ($errors->has('name'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
