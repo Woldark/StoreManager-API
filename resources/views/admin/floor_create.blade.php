@@ -3,9 +3,9 @@
 @section('header')
     <section class="content-header">
         <h1>
-            ساختمان ها
+            طبقات
             <br>
-            <small>ساختمان جدید</small>
+            <small>طبقه جدید</small>
         </h1>
     </section>
 @endsection
@@ -15,10 +15,10 @@
         <div class="col-lg-10 col-lg-offset-1">
             <div class="box box-success">
                 <div class="box-header">
-                    <h3 class="box-title">مشخصات ساختمان</h3>
+                    <h3 class="box-title">مشخصات طبقه</h3>
                 </div>
                 <div class="box-body">
-                    <form method="post" action="{{ route('admin::buildings.create') }}">
+                    <form method="post" action="{{ route('admin::floors.create') }}">
                         {{ csrf_field() }}
                         <div class="col-md-4 col-md-offset-4">
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">

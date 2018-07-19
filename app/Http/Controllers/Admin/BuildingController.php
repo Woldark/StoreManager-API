@@ -6,7 +6,7 @@ use App\Building;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BuildingController extends Controller
+class BuildingController extends AdminController
 {
 	public function index()
 	{
@@ -32,13 +32,22 @@ class BuildingController extends Controller
 
 	public function edit($id)
 	{
-
+	    $building = Building::find($id);
+	    return view('admin.building_edit',compact('building'));
 	}
 
 	public function update(Request $request)
 	{
+	    $id = $request->get('id');
+	    $name = $request->get('name');
 
-	}
+        $building = Building::find($id);
+        $building->name = $name;
+        $building->save();
+
+        toast('ساختمان ' . $name . ' به روز شد', 'success', 'bottom-right');
+        return redirect()->route('admin::buildings.index');
+    }
 
 	public function delete($id)
 	{
