@@ -12,6 +12,11 @@
     <link rel="stylesheet" href="{{ asset('/admin/dist/css/skins/skin-green.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/admin/dist/css/bootstrap-rtl.min.css') }}">
     <link rel="stylesheet" href="{{ asset('/admin/dist/css/mine.css') }}">
+    <style>
+        .box-title {
+            color: #00a65a;
+        }
+    </style>
     @yield('style')
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
