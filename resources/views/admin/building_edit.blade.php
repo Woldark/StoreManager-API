@@ -5,7 +5,7 @@
         <h1>
             ساختمان ها
             <br>
-            <small>ساختمان جدید</small>
+            <small>ویرایش اطلاعات</small>
         </h1>
     </section>
 @endsection
@@ -18,13 +18,14 @@
                     <h3 class="box-title">مشخصات ساختمان</h3>
                 </div>
                 <div class="box-body">
-                    <form method="post" action="{{ route('admin::buildings.create') }}">
+                    <form method="post" action="{{ route('admin::buildings.update') }}">
                         {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $building->id }}">
                         <div class="col-md-4 col-md-offset-4">
                             <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                                 <input type="text" style="text-align: center"
                                        class="form-control" placeholder="نام"
-                                       name="name" tabindex="1" required>
+                                       name="name" tabindex="1" required value="{{ $building->name }}">
 
                                 @if ($errors->has('title'))
                                     <span class="help-block">

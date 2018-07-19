@@ -4,6 +4,9 @@ Route::get('/', function () {
 	return view('home');
 });
 
+Route::get('/home', 'Admin\MainController@index')->name('admin::home');
+
+
 Auth::routes();
 
 Route::group(['prefix' => 'management'], function () {

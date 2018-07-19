@@ -16,13 +16,8 @@ use App\Http\Controllers\Controller;
 use App\Responsible;
 use App\Room;
 
-class MainController extends Controller
+class MainController extends AdminController
 {
-	public function __construct()
-	{
-		$this->middleware('auth');
-	}
-
 	public function index()
 	{
 		$productCount = Good::all()->count();
