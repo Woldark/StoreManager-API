@@ -12,7 +12,6 @@ namespace App\Http\Controllers\Admin;
 use App\Building;
 use App\Floor;
 use App\Good;
-use App\Http\Controllers\Controller;
 use App\Responsible;
 use App\Room;
 

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Building;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class BuildingController extends AdminController
@@ -32,22 +31,22 @@ class BuildingController extends AdminController
 
 	public function edit($id)
 	{
-	    $building = Building::find($id);
-	    return view('admin.building_edit',compact('building'));
+		$building = Building::find($id);
+		return view('admin.building_edit', compact('building'));
 	}
 
 	public function update(Request $request)
 	{
-	    $id = $request->get('id');
-	    $name = $request->get('name');
+		$id = $request->get('id');
+		$name = $request->get('name');
 
-        $building = Building::find($id);
-        $building->name = $name;
-        $building->save();
+		$building = Building::find($id);
+		$building->name = $name;
+		$building->save();
 
-        toast('ساختمان ' . $name . ' به روز شد', 'success', 'bottom-right');
-        return redirect()->route('admin::buildings.index');
-    }
+		toast('ساختمان ' . $name . ' به روز شد', 'success', 'bottom-right');
+		return redirect()->route('admin::buildings.index');
+	}
 
 	public function delete($id)
 	{
