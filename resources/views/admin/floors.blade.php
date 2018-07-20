@@ -18,9 +18,9 @@
 @section('header')
     <section class="content-header">
         <h1>
-            طبقات
+            طبقه ها
             <br>
-            <small>لیست طبقات</small>
+            <small>لیست طبقه ها</small>
         </h1>
     </section>
 @endsection
@@ -30,7 +30,7 @@
         <div class="col-lg-10 col-lg-offset-1">
             <div class="box box-success">
                 <div class="box-header">
-                    <h3 class="box-title">لیست طبقات</h3>
+                    <h3 class="box-title">لیست طبقه ها</h3>
                 </div>
                 <div class="box-body">
                     <ul class="todo-list">

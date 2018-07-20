@@ -24,7 +24,7 @@
                             <div class="form-group{{ $errors->has('building') ? ' has-error' : '' }}">
                                 <label for="building" class="pull-right" style="direction: rtl;">ساختمان :</label>
                                 <select id="building" style="text-align: center; direction: rtl;"
-                                        class="form-control" tabindex="5"
+                                        class="form-control" tabindex="1"
                                         name="building" required>
                                     @foreach($buildings as $building)
                                         <option value="{{ $building->id }}">{{ $building->name }}</option>
@@ -41,7 +41,7 @@
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <input type="text" style="text-align: center"
                                        class="form-control" placeholder="نام"
-                                       name="name" tabindex="1" required>
+                                       name="name" tabindex="2" required>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -50,7 +50,7 @@
                                 @endif
                             </div>
                             <div class="form-group">
-                                <input type="submit" tabindex="2" name="publish"
+                                <input type="submit" tabindex="3" name="publish"
                                        class="btn center-block btn-success" value="ذخیره">
                             </div>
                         </div>
