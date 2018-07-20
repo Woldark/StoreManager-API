@@ -30,6 +30,11 @@ class Floor extends Model
 
 	protected static $logName = 'Floor';
 
+	protected $fillable = [
+		'name',
+		'building_id'
+	];
+
 	public function building(): BelongsTo
 	{
 		return $this->belongsTo(Building::class, 'building_id');

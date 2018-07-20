@@ -33,7 +33,15 @@ class Room extends Model
 
 	protected static $logName = 'Room';
 
-	protected $hidden = ['goods'];
+	protected $fillable = [
+		'name',
+		'barcode',
+		'floor_id'
+	];
+
+	protected $hidden = [
+		'goods'
+	];
 
 	public function floor(): BelongsTo
 	{
